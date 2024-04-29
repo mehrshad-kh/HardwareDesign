@@ -5,9 +5,12 @@ set -euo pipefail
 
 function cp_to_dir()
 {
+    # Capture arguments 1 to one-to-last.
     srcs=("${@: 1: $# - 1}")
+    # Capture the last argument.
     dir=${@: -1}
 
+    # If $dir does not exist, create it.
     [[ -d $dir ]] || mkdir -p $dir
 
     cp $srcs $dir
