@@ -34,6 +34,9 @@ cp_to_dir $projects/uni/04/labs/arch/hw/TFF* flip_flop/t
 cp_to_dir $projects/uni/04/labs/arch/hw/ThreeBit* counter/bidi/3
 cp_to_dir $projects/uni/04/labs/arch/hw/EightBit* counter/bidi/8
 
+cp_to_dir $projects/uni/04/labs/arch/05/HalfAdder* adder/half_adder
+cp_to_dir $projects/uni/04/labs/arch/05/*ArrayMultiplier* multiplier/array
+
 cd ..
 cd verilog
 cp_to_dir $projects/uni/03/labs/logic/05/*multiplexer* multiplexer

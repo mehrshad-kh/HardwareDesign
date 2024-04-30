@@ -1,7 +1,6 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 
--- This module has not been tested.
 entity FullAdder is 
     port (
         sum: out std_logic;

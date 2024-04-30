@@ -2,6 +2,7 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
+-- CAUTION: This module is incomplete.
 -- Generics:
 -- n: number of address bits. 
 --  : 2**n is the number of memory cells.
