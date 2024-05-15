@@ -31,8 +31,8 @@ cp_to_dir $projects/uni/04/labs/arch/07/Ram* memory/ram
 cp_to_dir $projects/uni/04/labs/arch/hw/AsyncJKFF* flip_flop/jk/async
 cp_to_dir $projects/uni/04/labs/arch/hw/SyncJKFF* flip_flop/jk/sync
 cp_to_dir $projects/uni/04/labs/arch/hw/TFF* flip_flop/t
-cp_to_dir $projects/uni/04/labs/arch/hw/ThreeBit* counter/bidi/3
-cp_to_dir $projects/uni/04/labs/arch/hw/EightBit* counter/bidi/8
+cp_to_dir $projects/uni/04/labs/arch/hw/ThreeBit* counter/bidi/3-bit
+cp_to_dir $projects/uni/04/labs/arch/hw/EightBit* counter/bidi/8-bit
 
 cp_to_dir $projects/uni/04/labs/arch/05/HalfAdder* adder/half_adder
 cp_to_dir $projects/uni/04/labs/arch/05/*ArrayMultiplier* multiplier/array
