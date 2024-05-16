@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # Be careful with these options.
-set -euo pipefail
+set -uo pipefail
 
 # usage: cp_to_dir [file...] directory
 # Copies files to the directory if they have been changed.
@@ -17,12 +17,11 @@ function cp_to_dir()
     [[ -d $dir ]] || mkdir -p $dir
 
     for src in $srcs; do
-        diff $src $dir/$(basename $src) >/dev/null
+        file_basename=$(basename $src)
+        diff $src $dir/$file_basename > /dev/null
 
         [[ $? -ne 0 ]] && cp $src $dir
     done
-
-    cp $srcs $dir
 }
 
 cd vhdl
