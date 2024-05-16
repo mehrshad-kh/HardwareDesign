@@ -3,6 +3,9 @@
 # Be careful with these options.
 set -euo pipefail
 
+# usage: cp_to_dir [file...] directory
+# Copies files to the directory if they have been changed.
+# Creates the directory if it does not exist.
 function cp_to_dir()
 {
     # Capture arguments 1 to one-to-last.
@@ -12,6 +15,12 @@ function cp_to_dir()
 
     # If $dir does not exist, create it.
     [[ -d $dir ]] || mkdir -p $dir
+
+    for src in $srcs; do
+        diff $src $dir/$(basename $src) >/dev/null
+
+        [[ $? -ne 0 ]] && cp $src $dir
+    done
 
     cp $srcs $dir
 }
@@ -36,6 +45,8 @@ cp_to_dir $projects/uni/04/labs/arch/hw/EightBit* counter/bidi/8-bit
 
 cp_to_dir $projects/uni/04/labs/arch/05/HalfAdder* adder/half_adder
 cp_to_dir $projects/uni/04/labs/arch/05/*ArrayMultiplier* multiplier/array
+
+cp_to_dir $projects/uni/04/labs/arch/06/ShiftRegister* shift_register
 
 cd ..
 cd verilog
