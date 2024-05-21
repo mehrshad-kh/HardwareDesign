@@ -18,7 +18,8 @@ function cp_to_dir()
 
     for src in $srcs; do
         file_basename=$(basename $src)
-        diff $src $dir/$file_basename > /dev/null
+        # Both standard output and error are discarded.
+        diff $src $dir/$file_basename &> /dev/null
 
         [[ $? -ne 0 ]] && cp $src $dir
     done
@@ -45,7 +46,8 @@ cp_to_dir $projects/uni/04/labs/arch/hw/EightBit* counter/bidi/8-bit
 cp_to_dir $projects/uni/04/labs/arch/05/HalfAdder* adder/half_adder
 cp_to_dir $projects/uni/04/labs/arch/05/*ArrayMultiplier* multiplier/array
 
-cp_to_dir $projects/uni/04/labs/arch/06/ShiftRegister* shift_register
+cp_to_dir $projects/uni/04/labs/arch/06/*ShiftRegister* shift_register
+cp_to_dir $projects/uni/04/labs/arch/06/ClockCounter* frequency_divider
 
 cd ..
 cd verilog
