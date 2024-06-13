@@ -4,6 +4,7 @@ use IEEE.numeric_std.all;
 
 -- n-bit ALU
 --
+-- CAUTION: I believe the overflow flag is not set properly.
 -- flags: C, O, P, S, Z.
 --      P: odd parity.
 -- sel: 4 bits, allowing for 16 different operations.
