@@ -68,9 +68,9 @@ cp_to_dir $projects/uni/03/labs/logic/08/* alu
 
 cp_to_dir $projects/uni/03/labs/logic/09/*flip_flop* flip_flop/jk
 
-cp_to_dir $projects/uni/03/labs/logic/09/bcd_to_seven_seg.v sequential_circuit
-cp_to_dir $projects/uni/03/labs/logic/09/freq_divider.v sequential_circuit
-cp_to_dir $projects/uni/03/labs/logic/09/seq_circuit.v sequential_circuit
+cp_to_dir $projects/uni/03/labs/logic/09/bcd_to_seven_seg.v counter
+cp_to_dir $projects/uni/03/labs/logic/09/freq_divider.v counter
+cp_to_dir $projects/uni/03/labs/logic/09/seq_circuit.v counter
 
 cp_to_dir $projects/uni/03/labs/logic/10/* fsm
 
