@@ -1,15 +1,15 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 
-entity RamTestBench is
-end entity RamTestBench;
+entity BidiRamTestBench is
+end entity BidiRamTestBench;
 
-architecture TestBench of RamTestBench is
+architecture TestBench of BidiRamTestBench is
     constant n: integer := 2;
     constant k: integer := 8;
     constant period: time := 20 ns;
 
-    signal data: std_logic_vector (k - 1 downto 0) := (others => 'Z');
+    signal data: std_logic_vector (k - 1 downto 0) := (others => '0');
     signal valid: std_logic := '0';
     signal addr: std_logic_vector (n - 1 downto 0) := (others => '0');
     signal cs: std_logic := '0';
@@ -18,7 +18,7 @@ architecture TestBench of RamTestBench is
     signal rst: std_logic := '0';
     signal clk: std_logic := '0';
 
-    component Ram is
+    component BidiRam is
         generic (
             n: integer := 2;
             k: integer := 8);
@@ -31,9 +31,9 @@ architecture TestBench of RamTestBench is
             we: in std_logic;
             rst: in std_logic;
             clk: in std_logic);
-    end component Ram;
+    end component BidiRam;
 begin
-    dut: Ram 
+    dut: BidiRam 
         port map (
             data => data,
             valid => valid,

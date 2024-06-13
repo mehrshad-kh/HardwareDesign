@@ -19,7 +19,7 @@ function cp_to_dir()
     for src in $srcs; do
         file_basename=$(basename $src)
         # Both standard output and error are discarded.
-        diff $src $dir/$file_basename &> /dev/null
+        diff -q $src $dir/$file_basename &> /dev/null
 
         [[ $? -ne 0 ]] && cp $src $dir
     done
@@ -35,7 +35,11 @@ cp_to_dir $projects/uni/04/labs/arch/03/DFF* flip_flop/d
 cp_to_dir $projects/uni/04/labs/arch/04/FourBitRippleCarryAdder* adder/four_bit_ripple_carry_adder
 cp_to_dir $projects/uni/04/labs/arch/04/FullAdder* adder/full_adder
 
-cp_to_dir $projects/uni/04/labs/arch/07/Ram* memory/ram
+cp_to_dir $projects/uni/04/labs/arch/07/Ram* memory/ram/ram
+cp_to_dir $projects/uni/04/labs/arch/07/BidiRam* memory/ram/bidi
+
+cp_to_dir $projects/uni/04/labs/arch/09/Alu* cpu/alu
+cp_to_dir $projects/uni/04/labs/arch/09/Cpu* cpu/cpu
 
 cp_to_dir $projects/uni/04/labs/arch/hw/AsyncJKFF* flip_flop/jk/async
 cp_to_dir $projects/uni/04/labs/arch/hw/SyncJKFF* flip_flop/jk/sync
